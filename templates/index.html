@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Blockchain Surveillance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <span>AI</span> CCTV
+        </div>
+
+        <div class="menu active">Dashboard</div>
+        <div class="menu">Video Analysis</div>
+        <div class="menu">Blockchain Evidence</div>
+        <div class="menu">Security Logs</div>
+
+        <button class="wallet-btn" onclick="connectWallet()">
+            Kết nối MetaMask
+        </button>
+
+        <p id="walletAddress" class="wallet-address">Chưa kết nối ví</p>
+    </aside>
+
+    <main class="main">
+        <section class="hero">
+            <div>
+                <h1>Nhận diện hành vi bất thường</h1>
+                <p>
+                    Hệ thống AI phân tích camera giám sát, phát hiện chạy, té ngã,
+                    đánh nhau và lưu bằng chứng lên Blockchain.
+                </p>
+            </div>
+
+            <div class="status-card">
+                <h3>Trạng thái</h3>
+                <p id="systemStatus">Sẵn sàng</p>
+            </div>
+        </section>
+
+        <section class="upload-card">
+            <h2>Tải video giám sát</h2>
+
+            <div class="upload-box">
+                <input type="file" id="videoInput" accept="video/*">
+                <button onclick="uploadVideo()">Phân tích video</button>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="panel">
+                <h2>Video gốc</h2>
+                <video id="originalVideo" controls></video>
+            </div>
+
+            <div class="panel">
+                <h2>Video sau phân tích AI</h2>
+                <video id="processedVideo" controls></video>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Kết quả phân tích</h2>
+
+            <div class="hash-box">
+                <strong>SHA-256 Video Hash:</strong>
+                <p id="videoHash">Chưa có dữ liệu</p>
+            </div>
+
+            <div id="eventList" class="event-list"></div>
+        </section>
+    </main>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
